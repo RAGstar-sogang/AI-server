@@ -1,0 +1,101 @@
+[  751.142410] node invoked oom-killer: gfp_mask=0x140cca(GFP_HIGHUSER_MOVABLE|__GFP_COMP), order=0, oom_score_adj=0
+[  751.142418] CPU: 0 PID: 1578 Comm: node Not tainted 6.8.0-107-generic #107-Ubuntu
+[  751.142421] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[  751.142422] Call Trace:
+[  751.142423]  <TASK>
+[  751.142426]  dump_stack_lvl+0x76/0xa0
+[  751.142437]  dump_stack+0x10/0x20
+[  751.142438]  dump_header+0x49/0x210
+[  751.142443]  oom_kill_process+0x118/0x280
+[  751.142445]  ? oom_evaluate_task+0x143/0x1e0
+[  751.142447]  out_of_memory+0x103/0x350
+[  751.142449]  __alloc_pages_may_oom+0x10c/0x1d0
+[  751.142452]  __alloc_pages_slowpath.constprop.0+0x4c9/0xa50
+[  751.142455]  __alloc_pages+0x31f/0x350
+[  751.142458]  alloc_pages_mpol+0x91/0x210
+[  751.142461]  alloc_pages+0x5b/0xd0
+[  751.142462]  folio_alloc+0x15/0x40
+[  751.142463]  filemap_alloc_folio+0xf4/0x100
+[  751.142466]  __filemap_get_folio+0x199/0x2e0
+[  751.142468]  filemap_fault+0x15c/0x8e0
+[  751.142471]  __do_fault+0x3d/0x190
+[  751.142473]  do_read_fault+0x133/0x200
+[  751.142475]  do_fault+0xf0/0x260
+[  751.142477]  handle_pte_fault+0x114/0x1d0
+[  751.142479]  __handle_mm_fault+0x654/0x790
+[  751.142481]  handle_mm_fault+0x18a/0x380
+[  751.142482]  do_user_addr_fault+0x169/0x670
+[  751.142485]  exc_page_fault+0x83/0x1b0
+[  751.142488]  asm_exc_page_fault+0x27/0x30
+[  751.142490] RIP: 0033:0xe34220
+[  751.142501] Code: Unable to access opcode bytes at 0xe341f6.
+[  751.142502] RSP: 002b:00007ffccfadfba8 EFLAGS: 00010202
+[  751.142504] RAX: 000000aeedd0a94d RBX: 0000000006b3e420 RCX: 0000000000000000
+[  751.142505] RDX: 0000000000000001 RSI: 0000000000000000 RDI: 000000003a4c85d8
+[  751.142506] RBP: 00007ffccfadfbb0 R08: 0000000000000000 R09: 0000000000000000
+[  751.142507] R10: 0000000000000000 R11: 0000000000000000 R12: 00007ffccfadfbd0
+[  751.142507] R13: 0000000000000008 R14: 0000000006b3e468 R15: 0000000000000000
+[  751.142509]  </TASK>
+[  751.142510] Mem-Info:
+[  751.142511] active_anon:376940 inactive_anon:71593 isolated_anon:0
+                active_file:2 inactive_file:2 isolated_file:0
+                unevictable:6829 dirty:8 writeback:0
+                slab_reclaimable:6184 slab_unreclaimable:11277
+                mapped:2307 shmem:264 pagetables:4348
+                sec_pagetables:0 bounce:0
+                kernel_misc_reclaimable:0
+                free:13112 free_pcp:62 free_cma:0
+[  751.142515] Node 0 active_anon:1507760kB inactive_anon:286372kB active_file:8kB inactive_file:8kB unevictable:27316kB isolated(anon):0kB isolated(file):0kB mapped:9228kB dirty:32kB writeback:0kB shmem:1056kB shmem_thp:0kB shmem_pmdmapped:0kB anon_thp:0kB writeback_tmp:0kB kernel_stack:3104kB pagetables:17392kB sec_pagetables:0kB all_unreclaimable? yes
+[  751.142517] Node 0 DMA free:7840kB boost:0kB min:356kB low:444kB high:532kB reserved_highatomic:0KB active_anon:6032kB inactive_anon:1172kB active_file:0kB inactive_file:0kB unevictable:0kB writepending:0kB present:15992kB managed:15360kB mlocked:0kB bounce:0kB free_pcp:0kB local_pcp:0kB free_cma:0kB
+[  751.142521] lowmem_reserve[]: 0 1871 1871 1871 1871
+[  751.142524] Node 0 DMA32 free:44608kB boost:0kB min:44696kB low:55868kB high:67040kB reserved_highatomic:0KB active_anon:1501728kB inactive_anon:285200kB active_file:8kB inactive_file:8kB unevictable:27316kB writepending:32kB present:2080704kB managed:1999948kB mlocked:27316kB bounce:0kB free_pcp:248kB local_pcp:248kB free_cma:0kB
+[  751.142527] lowmem_reserve[]: 0 0 0 0 0
+[  751.142530] Node 0 DMA: 4*4kB (UM) 6*8kB (UME) 6*16kB (UME) 2*32kB (U) 3*64kB (UME) 2*128kB (ME) 2*256kB (ME) 3*512kB (UME) 1*1024kB (E) 2*2048kB (ME) 0*4096kB = 7840kB
+[  751.142539] Node 0 DMA32: 1164*4kB (UE) 774*8kB (UE) 438*16kB (UE) 204*32kB (UME) 104*64kB (UME) 48*128kB (UME) 19*256kB (UME) 5*512kB (UME) 0*1024kB 0*2048kB 0*4096kB = 44608kB
+[  751.142549] Node 0 hugepages_total=0 hugepages_free=0 hugepages_surp=0 hugepages_size=2048kB
+[  751.142550] 2486 total pagecache pages
+[  751.142550] 0 pages in swap cache
+[  751.142551] Free swap  = 0kB
+[  751.142552] Total swap = 0kB
+[  751.142552] 524174 pages RAM
+[  751.142553] 0 pages HighMem/MovableOnly
+[  751.142553] 20347 pages reserved
+[  751.142554] 0 pages hwpoisoned
+[  751.142554] Tasks state (memory values in pages):
+[  751.142555] [  pid  ]   uid  tgid total_vm      rss rss_anon rss_file rss_shmem pgtables_bytes swapents oom_score_adj name
+[  751.142557] [    288]     0   288    16691     1103      288      813         2   114688        0          -250 systemd-journal
+[  751.142560] [    338]     0   338    72247     6816     4640     2176         0   114688        0         -1000 multipathd
+[  751.142563] [    363]     0   363     7260     1280      672      608         0    81920        0         -1000 systemd-udevd
+[  751.142564] [    408]   992   408     5397     1312      576      736         0    90112        0             0 systemd-resolve
+[  751.142566] [    442]   998   442     4752     1024      288      736         0    77824        0             0 systemd-network
+[  751.142568] [    551]   101   551     2474     1120      224      896         0    57344        0          -900 dbus-daemon
+[  751.142570] [    557]   991   557    77041     1056      224      832         0   106496        0             0 polkitd
+[  751.142571] [    567]     0   567     4532     1056      256      800         0    77824        0             0 systemd-logind
+[  751.142573] [    568]     0   568   117242     1408      512      896         0   151552        0             0 udisksd
+[  751.142574] [    602]     0   602    27422     3199     2335      864         0   114688        0             0 unattended-upgr
+[  751.142576] [    606]   103   606    55627     1248      384      864         0    90112        0             0 rsyslogd
+[  751.142578] [    626]     0   626    98008     1344      512      832         0   135168        0             0 ModemManager
+[  751.142579] [    645]     0   645    73288      705       97      608         0    98304        0             0 VBoxService
+[  751.142581] [    799]     0   799     1706      576       32      544         0    61440        0             0 cron
+[  751.142582] [    808]     0   808     1737      832      192      640         0    57344        0             0 login
+[  751.142583] [    907]  1000   907     5023     1184      448      736         0    86016        0           100 systemd
+[  751.142585] [    908]  1000   908     5290      688      432      256         0    77824        0           100 (sd-pam)
+[  751.142587] [    917]  1000   917     2164      928      416      512         0    61440        0             0 bash
+[  751.142588] [   1318]     0  1318    78515     1024      384      640         0   114688        0             0 upowerd
+[  751.142590] [   1428]     0  1428     3006      832      256      576         0    65536        0         -1000 sshd
+[  751.142592] [   1574]  1000  1574      700      448        0      448         0    45056        0             0 sh
+[  751.142593] [   1578]  1000  1578  2947336    18950    18246      704         0  1261568        0             0 node
+[  751.142595] [   1627]  1000  1627   289758     7181     6509      672         0  1024000        0             0 node
+[  751.142597] [   1665]     0  1665     3742     1088      416      672         0    65536        0             0 sshd
+[  751.142598] [   1712]  1000  1712     3778      972      524      448         0    69632        0             0 sshd
+[  751.142600] [   1713]  1000  1713      700      480       32      448         0    49152        0             0 sh
+[  751.142601] [   1731]  1000  1731     9776     1271     1239       32         0   122880        0             0 code-e7fb5e96c0
+[  751.142603] [   1752]  1000  1752     1421      416        0      416         0    57344        0             0 sleep
+[  751.142604] [   1753]  1000  1753 13671549   127022   126318      704         0  8962048        0             0 node
+[  751.142606] [   1764]  1000  1764   316018     4161     3553      608         0   724992        0             0 node
+[  751.142607] [   1822]  1000  1822     2198      928      416      512         0    61440        0             0 bash
+[  751.142609] [   1948]  1000  1948   273408     4974     4334      640         0   737280        0             0 node
+[  751.142610] [   2349]     0  2349    93171     1600      736      864         0   176128        0             0 packagekitd
+[  751.142612] [   2505]  1000  2505   279215   276544   276192      352         0  2273280        0             0 malloc
+[  751.142613] oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=/,mems_allowed=0,global_oom,task_memcg=/user.slice/user-1000.slice/session-4.scope,task=malloc,pid=2505,uid=1000
+[  751.142624] Out of memory: Killed process 2505 (malloc) total-vm:1116860kB, anon-rss:1104768kB, file-rss:1408kB, shmem-rss:0kB, UID:1000 pgtables:2220kB oom_score_adj:0

@@ -1,0 +1,753 @@
+[  844.294987] runc:[2:INIT] invoked oom-killer: gfp_mask=0xcc0(GFP_KERNEL), order=0, oom_score_adj=0
+[  844.294995] CPU: 0 PID: 9263 Comm: runc:[2:INIT] Not tainted 6.8.0-107-generic #107-Ubuntu
+[  844.294997] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[  844.294998] Call Trace:
+[  844.295000]  <TASK>
+[  844.295002]  dump_stack_lvl+0x76/0xa0
+[  844.295012]  dump_stack+0x10/0x20
+[  844.295013]  dump_header+0x49/0x210
+[  844.295018]  oom_kill_process+0x118/0x280
+[  844.295021]  out_of_memory+0x103/0x350
+[  844.295023]  mem_cgroup_out_of_memory+0x145/0x170
+[  844.295026]  try_charge_memcg+0x6d6/0x7d0
+[  844.295028]  ? mtree_load+0x277/0x2d0
+[  844.295030]  obj_cgroup_charge+0x6a/0x180
+[  844.295033]  kmem_cache_alloc+0x2ce/0x350
+[  844.295035]  ? vm_area_dup+0x24/0x140
+[  844.295039]  vm_area_dup+0x24/0x140
+[  844.295041]  __split_vma+0x80/0x2f0
+[  844.295044]  vma_modify+0xc6/0x110
+[  844.295046]  mprotect_fixup+0x116/0x3a0
+[  844.295048]  do_mprotect_pkey+0x318/0x570
+[  844.295050]  ? mem_cgroup_iter+0xea/0x2a0
+[  844.295054]  __x64_sys_mprotect+0x1f/0x30
+[  844.295055]  x64_sys_call+0xb59/0x25a0
+[  844.295057]  do_syscall_64+0x7f/0x180
+[  844.295060]  ? mas_store_prealloc+0x5c/0xe0
+[  844.295063]  ? vma_expand+0x19c/0x2a0
+[  844.295065]  ? vma_set_page_prot+0x69/0xc0
+[  844.295068]  ? __mmap_region+0x4b9/0x980
+[  844.295070]  ? mmap_region+0x54/0xc0
+[  844.295071]  ? vm_mmap_pgoff+0x128/0x1a0
+[  844.295074]  ? ksys_mmap_pgoff+0x4a/0x270
+[  844.295077]  ? arch_exit_to_user_mode_prepare.isra.0+0x1a/0xe0
+[  844.295079]  ? syscall_exit_to_user_mode+0x43/0x1e0
+[  844.295081]  ? do_syscall_64+0x8c/0x180
+[  844.295083]  ? exc_page_fault+0x94/0x1b0
+[  844.295085]  entry_SYSCALL_64_after_hwframe+0x78/0x80
+[  844.295088] RIP: 0033:0x7724d4f25c4b
+[  844.295098] Code: 83 c4 08 4c 89 f8 5b 41 5c 41 5d 41 5e 41 5f 5d c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 f3 0f 1e fa b8 0a 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 9d d1 0d 00 f7 d8 64 89 01 48
+[  844.295100] RSP: 002b:00007ffc80b4e1a8 EFLAGS: 00000206 ORIG_RAX: 000000000000000a
+[  844.295102] RAX: ffffffffffffffda RBX: 000077248dbfe6c0 RCX: 00007724d4f25c4b
+[  844.295103] RDX: 0000000000000003 RSI: 0000000000800000 RDI: 000077248d3ff000
+[  844.295104] RBP: 00007ffc80b4e2f0 R08: 00000000ffffffff R09: 0000000000000000
+[  844.295105] R10: 0000000000801000 R11: 0000000000000206 R12: 00007ffc80b4e370
+[  844.295106] R13: 0000000000000000 R14: ffffffffffffffc0 R15: 00007724d51d3000
+[  844.295108]  </TASK>
+[  844.295109] memory: usage 131072kB, limit 131072kB, failcnt 4573503
+[  844.295112] swap: usage 0kB, limit 131072kB, failcnt 0
+[  844.295113] Memory cgroup stats for /system.slice/docker-126fd9c6e3bd822b75b1df9547687ab42e8e9ae1379f175087e20065c31bb816.scope:
+[  844.295126] anon 122179584
+[  844.295127] file 126976
+[  844.295128] kernel 11911168
+[  844.295128] kernel_stack 1212416
+[  844.295129] pagetables 5799936
+[  844.295129] sec_pagetables 0
+[  844.295130] percpu 1224
+[  844.295130] sock 0
+[  844.295131] vmalloc 110592
+[  844.295132] shmem 0
+[  844.295132] zswap 0
+[  844.295133] zswapped 0
+[  844.295133] file_mapped 0
+[  844.295134] file_dirty 0
+[  844.295134] file_writeback 0
+[  844.295135] swapcached 0
+[  844.295135] anon_thp 0
+[  844.295136] file_thp 0
+[  844.295136] shmem_thp 0
+[  844.295137] inactive_anon 69586944
+[  844.295138] active_anon 52592640
+[  844.295138] inactive_file 0
+[  844.295139] active_file 126976
+[  844.295139] unevictable 0
+[  844.295140] slab_reclaimable 3047720
+[  844.295140] slab_unreclaimable 1517488
+[  844.295141] slab 4565208
+[  844.295142] workingset_refault_anon 0
+[  844.295142] workingset_refault_file 5171392
+[  844.295143] workingset_activate_anon 0
+[  844.295143] workingset_activate_file 547665
+[  844.295144] workingset_restore_anon 0
+[  844.295144] workingset_restore_file 535782
+[  844.295145] workingset_nodereclaim 0
+[  844.295146] pgscan 7567715
+[  844.295146] pgsteal 5273530
+[  844.295147] pgscan_kswapd 7855
+[  844.295147] pgscan_direct 7559860
+[  844.295148] pgscan_khugepaged 0
+[  844.295148] pgsteal_kswapd 7855
+[  844.295149] pgsteal_direct 5265675
+[  844.295149] pgsteal_khugepaged 0
+[  844.295150] pgfault 756415
+[  844.295151] pgmajfault 195886
+[  844.295151] pgrefill 2430655
+[  844.295152] pgactivate 2035479
+[  844.295152] pgdeactivate 0
+[  844.295153] pglazyfree 0
+[  844.295153] pglazyfreed 0
+[  844.295154] zswpin 0
+[  844.295154] zswpout 0
+[  844.295155] zswpwb 0
+[  844.295155] thp_fault_alloc 0
+[  844.295156] thp_collapse_alloc 0
+[  844.295156] thp_swpout 0
+[  844.295157] thp_swpout_fallback 0
+[  844.295158] Tasks state (memory values in pages):
+[  844.295158] [  pid  ]   uid  tgid total_vm      rss rss_anon rss_file rss_shmem pgtables_bytes swapents oom_score_adj name
+[  844.295159] [   3882]     0  3882     1157      928      128      800         0    53248        0             0 bash
+[  844.295162] [   7607]     0  7607      723      416        0      416         0    49152        0             0 sh
+[  844.295164] [   7726]     0  7726      723      448       32      416         0    53248        0             0 sh
+[  844.295166] [   7784]     0  7784   253571     3138     2210      928         0   548864        0             0 node
+[  844.295168] [   7815]     0  7815      723      416        0      416         0    49152        0             0 sh
+[  844.295170] [   7825]     0  7825  2941030    10943     9951      992         0  1277952        0             0 node
+[  844.295172] [   8010]     0  8010   262417     3827     2899      928         0   655360        0             0 node
+[  844.295174] [   8048]     0  8048      723      416        0      416         0    53248        0             0 sh
+[  844.295175] [   8057]     0  8057  2904798     6948     5988      960         0   843776        0             0 node
+[  844.295177] [   8114]     0  8114   263228     4829     3901      928         0   651264        0             0 node
+[  844.295178] [   8207]     0  8207      723      384        0      384         0    53248        0             0 sh
+[  844.295180] [   8230]     0  8230   187324     2656     1760      896         0   499712        0             0 node
+[  844.295182] [   8237]     0  8237   220964     3104     2176      928         0   573440        0             0 node
+[  844.295183] [   8776]     0  8776      723      416        0      416         0    49152        0             0 sh
+[  844.295185] [   8883]     0  8883      723      448       32      416         0    53248        0             0 sh
+[  844.295186] [   8912]     0  8912    27752     1056      192      864         0   151552        0             0 node
+[  844.295188] [   9255]     0  9255   383143     1665      193     1472         0   143360        0             0 runc:[2:INIT]
+[  844.295189] [   9260]     0  9260   364838     1153      161      992         0   135168        0             0 runc:[2:INIT]
+[  844.295191] [   9264]     0  9264   309347      993       97      896         0   114688        0             0 runc:[2:INIT]
+[  844.295192] [   9263]     0  9263   329893     1089      129      960         0   114688        0             0 runc:[2:INIT]
+[  844.295194] oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=docker-126fd9c6e3bd822b75b1df9547687ab42e8e9ae1379f175087e20065c31bb816.scope,mems_allowed=0,oom_memcg=/system.slice/docker-126fd9c6e3bd822b75b1df9547687ab42e8e9ae1379f175087e20065c31bb816.scope,task_memcg=/system.slice/docker-126fd9c6e3bd822b75b1df9547687ab42e8e9ae1379f175087e20065c31bb816.scope,task=node,pid=7825,uid=0
+[  844.295211] Memory cgroup out of memory: Killed process 7825 (node) total-vm:11764120kB, anon-rss:39804kB, file-rss:3968kB, shmem-rss:0kB, UID:0 pgtables:1248kB oom_score_adj:0
+[  854.381874] node invoked oom-killer: gfp_mask=0x100cca(GFP_HIGHUSER_MOVABLE), order=0, oom_score_adj=0
+[  854.381882] CPU: 0 PID: 8237 Comm: node Not tainted 6.8.0-107-generic #107-Ubuntu
+[  854.381884] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[  854.381886] Call Trace:
+[  854.381887]  <TASK>
+[  854.381890]  dump_stack_lvl+0x76/0xa0
+[  854.381893]  dump_stack+0x10/0x20
+[  854.381895]  dump_header+0x49/0x210
+[  854.381898]  oom_kill_process+0x118/0x280
+[  854.381900]  out_of_memory+0x103/0x350
+[  854.381902]  mem_cgroup_out_of_memory+0x145/0x170
+[  854.381905]  try_charge_memcg+0x6d6/0x7d0
+[  854.381908]  ? __alloc_pages+0x1e9/0x350
+[  854.381911]  __mem_cgroup_charge+0x45/0xc0
+[  854.381913]  __filemap_add_folio+0x1da/0x4a0
+[  854.381916]  ? __pfx_workingset_update_node+0x10/0x10
+[  854.381918]  filemap_add_folio+0x3d/0xb0
+[  854.381920]  __filemap_get_folio+0x16c/0x2e0
+[  854.381922]  filemap_fault+0x15c/0x8e0
+[  854.381925]  __do_fault+0x3d/0x190
+[  854.381927]  do_read_fault+0x133/0x200
+[  854.381929]  do_fault+0xf0/0x260
+[  854.381931]  handle_pte_fault+0x114/0x1d0
+[  854.381933]  __handle_mm_fault+0x654/0x790
+[  854.381935]  handle_mm_fault+0x18a/0x380
+[  854.381937]  do_user_addr_fault+0x169/0x670
+[  854.381940]  exc_page_fault+0x83/0x1b0
+[  854.381942]  asm_exc_page_fault+0x27/0x30
+[  854.381945] RIP: 0033:0x102a1b5
+[  854.381955] Code: Unable to access opcode bytes at 0x102a18b.
+[  854.381956] RSP: 002b:00007ffc801feaa0 EFLAGS: 00010206
+[  854.381958] RAX: 0000000000000000 RBX: 0000000020c44ab0 RCX: 0000000020c4e690
+[  854.381959] RDX: 0000000020c46a70 RSI: 0000000020bd9000 RDI: 0000000020bd9000
+[  854.381960] RBP: 00007ffc801feb40 R08: 0000000000000001 R09: 0000000006b3e420
+[  854.381961] R10: 0000000000000000 R11: 0000000000000001 R12: 0000000020beda80
+[  854.381962] R13: 00007ffc801feb58 R14: 0000000020ca0c40 R15: 0000000000000000
+[  854.381965]  </TASK>
+[  854.381966] memory: usage 131072kB, limit 131072kB, failcnt 5001573
+[  854.381967] swap: usage 0kB, limit 131072kB, failcnt 0
+[  854.381968] Memory cgroup stats for /system.slice/docker-126fd9c6e3bd822b75b1df9547687ab42e8e9ae1379f175087e20065c31bb816.scope:
+[  854.381980] anon 120451072
+[  854.381981] file 466944
+[  854.381982] kernel 13299712
+[  854.381982] kernel_stack 1245184
+[  854.381983] pagetables 6807552
+[  854.381984] sec_pagetables 0
+[  854.381984] percpu 1224
+[  854.381985] sock 0
+[  854.381985] vmalloc 184320
+[  854.381986] shmem 0
+[  854.381986] zswap 0
+[  854.381987] zswapped 0
+[  854.381987] file_mapped 0
+[  854.381988] file_dirty 0
+[  854.381988] file_writeback 0
+[  854.381989] swapcached 0
+[  854.381989] anon_thp 0
+[  854.381990] file_thp 0
+[  854.381990] shmem_thp 0
+[  854.381991] inactive_anon 75251712
+[  854.381991] active_anon 45199360
+[  854.381992] inactive_file 0
+[  854.381993] active_file 466944
+[  854.381993] unevictable 0
+[  854.381994] slab_reclaimable 3029488
+[  854.381994] slab_unreclaimable 1704592
+[  854.381995] slab 4734080
+[  854.381995] workingset_refault_anon 0
+[  854.381996] workingset_refault_file 5617831
+[  854.381996] workingset_activate_anon 0
+[  854.381997] workingset_activate_file 588377
+[  854.381998] workingset_restore_anon 0
+[  854.381998] workingset_restore_file 576486
+[  854.381999] workingset_nodereclaim 0
+[  854.381999] pgscan 9377970
+[  854.382000] pgsteal 5719982
+[  854.382000] pgscan_kswapd 7855
+[  854.382001] pgscan_direct 9370115
+[  854.382001] pgscan_khugepaged 0
+[  854.382002] pgsteal_kswapd 7855
+[  854.382002] pgsteal_direct 5712127
+[  854.382003] pgsteal_khugepaged 0
+[  854.382004] pgfault 864044
+[  854.382004] pgmajfault 212753
+[  854.382005] pgrefill 7986525
+[  854.382005] pgactivate 3380537
+[  854.382006] pgdeactivate 0
+[  854.382006] pglazyfree 0
+[  854.382007] pglazyfreed 0
+[  854.382007] zswpin 0
+[  854.382008] zswpout 0
+[  854.382008] zswpwb 0
+[  854.382009] thp_fault_alloc 0
+[  854.382009] thp_collapse_alloc 0
+[  854.382010] thp_swpout 0
+[  854.382010] thp_swpout_fallback 0
+[  854.382011] Tasks state (memory values in pages):
+[  854.382012] [  pid  ]   uid  tgid total_vm      rss rss_anon rss_file rss_shmem pgtables_bytes swapents oom_score_adj name
+[  854.382013] [   3882]     0  3882     1157      928      128      800         0    53248        0             0 bash
+[  854.382016] [   7607]     0  7607      723      416        0      416         0    49152        0             0 sh
+[  854.382018] [   7726]     0  7726      723      448       32      416         0    53248        0             0 sh
+[  854.382019] [   7784]     0  7784   253571     3138     2210      928         0   548864        0             0 node
+[  854.382021] [   8114]     0  8114  2905845    11763    10771      992         0  1261568        0             0 node
+[  854.382023] [   8207]     0  8207      723      384        0      384         0    53248        0             0 sh
+[  854.382025] [   8237]     0  8237   220964     3136     2208      928         0   573440        0             0 node
+[  854.382026] [   8776]     0  8776      723      416        0      416         0    49152        0             0 sh
+[  854.382028] [   8883]     0  8883      723      448       32      416         0    53248        0             0 sh
+[  854.382030] [   8912]     0  8912   221028     3264     2304      960         0   565248        0             0 node
+[  854.382031] [   9260]     0  9260      723      384        0      384         0    53248        0             0 sh
+[  854.382033] [   9263]     0  9263      723      416        0      416         0    49152        0             0 sh
+[  854.382034] [   9372]     0  9372      723      448        0      448         0    49152        0             0 sh
+[  854.382036] [   9413]     0  9413   221028     3104     2208      896         0   569344        0             0 node
+[  854.382037] [   9482]     0  9482      723      384        0      384         0    45056        0             0 sh
+[  854.382039] [   9512]     0  9512   221028     3136     2208      928         0   577536        0             0 node
+[  854.382040] [   9583]     0  9583      723      384        0      384         0    45056        0             0 sh
+[  854.382042] [   9616]     0  9616   221028     3104     2208      896         0   569344        0             0 node
+[  854.382043] [   9690]     0  9690   187260     2432     1536      896         0   462848        0             0 node
+[  854.382045] [   9710]     0  9710      723      384        0      384         0    45056        0             0 sh
+[  854.382046] [   9717]     0  9717   187260     2432     1536      896         0   471040        0             0 node
+[  854.382048] [   9726]     0  9726   187245     2400     1504      896         0   454656        0             0 node
+[  854.382049] [   9767]     0  9767      920      416       32      384         0    53248        0             0 ls
+[  854.382051] [   9768]     0  9768      723      128        0      128         0    53248        0             0 sh
+[  854.382052] [   9769]     0  9769      920      480       32      448         0    49152        0             0 ls
+[  854.382053] oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=docker-126fd9c6e3bd822b75b1df9547687ab42e8e9ae1379f175087e20065c31bb816.scope,mems_allowed=0,oom_memcg=/system.slice/docker-126fd9c6e3bd822b75b1df9547687ab42e8e9ae1379f175087e20065c31bb816.scope,task_memcg=/system.slice/docker-126fd9c6e3bd822b75b1df9547687ab42e8e9ae1379f175087e20065c31bb816.scope,task=node,pid=8114,uid=0
+[  854.382071] Memory cgroup out of memory: Killed process 8114 (node) total-vm:11623380kB, anon-rss:43084kB, file-rss:3968kB, shmem-rss:0kB, UID:0 pgtables:1232kB oom_score_adj:0
+[  990.343201] docker0: port 1(veth5a39738) entered disabled state
+[  990.343674] veth6bd2f50: renamed from eth0
+[  990.361876] docker0: port 1(veth5a39738) entered disabled state
+[  990.362062] veth5a39738 (unregistering): left allmulticast mode
+[  990.362133] veth5a39738 (unregistering): left promiscuous mode
+[  990.362135] docker0: port 1(veth5a39738) entered disabled state
+[  994.059584] docker0: port 1(veth0d54e82) entered blocking state
+[  994.059591] docker0: port 1(veth0d54e82) entered disabled state
+[  994.060395] veth0d54e82: entered allmulticast mode
+[  994.060499] veth0d54e82: entered promiscuous mode
+[  994.075016] eth0: renamed from veth1c0293e
+[  994.080381] docker0: port 1(veth0d54e82) entered blocking state
+[  994.080385] docker0: port 1(veth0d54e82) entered forwarding state
+[ 1084.678715] docker0: port 1(veth0d54e82) entered disabled state
+[ 1084.678834] veth1c0293e: renamed from eth0
+[ 1084.716570] docker0: port 1(veth0d54e82) entered disabled state
+[ 1084.716732] veth0d54e82 (unregistering): left allmulticast mode
+[ 1084.716734] veth0d54e82 (unregistering): left promiscuous mode
+[ 1084.716737] docker0: port 1(veth0d54e82) entered disabled state
+[ 1131.279302] docker0: port 1(veth9dd21b8) entered blocking state
+[ 1131.279308] docker0: port 1(veth9dd21b8) entered disabled state
+[ 1131.279427] veth9dd21b8: entered allmulticast mode
+[ 1131.279462] veth9dd21b8: entered promiscuous mode
+[ 1131.292973] eth0: renamed from veth1bbd6cd
+[ 1131.296640] docker0: port 1(veth9dd21b8) entered blocking state
+[ 1131.296643] docker0: port 1(veth9dd21b8) entered forwarding state
+[ 1164.106443] docker0: port 1(veth9dd21b8) entered disabled state
+[ 1164.106544] veth1bbd6cd: renamed from eth0
+[ 1164.135335] docker0: port 1(veth9dd21b8) entered disabled state
+[ 1164.137158] veth9dd21b8 (unregistering): left allmulticast mode
+[ 1164.137162] veth9dd21b8 (unregistering): left promiscuous mode
+[ 1164.137165] docker0: port 1(veth9dd21b8) entered disabled state
+[ 1193.953998] docker0: port 1(veth042952d) entered blocking state
+[ 1193.954004] docker0: port 1(veth042952d) entered disabled state
+[ 1193.954016] veth042952d: entered allmulticast mode
+[ 1193.954050] veth042952d: entered promiscuous mode
+[ 1193.979080] eth0: renamed from veth5cac117
+[ 1193.981653] docker0: port 1(veth042952d) entered blocking state
+[ 1193.981659] docker0: port 1(veth042952d) entered forwarding state
+[ 1247.898328] node invoked oom-killer: gfp_mask=0xcc0(GFP_KERNEL), order=0, oom_score_adj=0
+[ 1247.898335] CPU: 0 PID: 15542 Comm: node Not tainted 6.8.0-107-generic #107-Ubuntu
+[ 1247.898338] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[ 1247.898339] Call Trace:
+[ 1247.898341]  <TASK>
+[ 1247.898343]  dump_stack_lvl+0x76/0xa0
+[ 1247.898347]  dump_stack+0x10/0x20
+[ 1247.898348]  dump_header+0x49/0x210
+[ 1247.898351]  oom_kill_process+0x118/0x280
+[ 1247.898353]  out_of_memory+0x103/0x350
+[ 1247.898355]  mem_cgroup_out_of_memory+0x145/0x170
+[ 1247.898359]  try_charge_memcg+0x6d6/0x7d0
+[ 1247.898361]  ? vma_alloc_folio+0x7a/0xd0
+[ 1247.898370]  __mem_cgroup_charge+0x45/0xc0
+[ 1247.898373]  do_anonymous_page+0xb2/0x430
+[ 1247.898375]  handle_pte_fault+0x1cb/0x1d0
+[ 1247.898377]  __handle_mm_fault+0x654/0x790
+[ 1247.898379]  handle_mm_fault+0x18a/0x380
+[ 1247.898380]  do_user_addr_fault+0x169/0x670
+[ 1247.898383]  exc_page_fault+0x83/0x1b0
+[ 1247.898386]  asm_exc_page_fault+0x27/0x30
+[ 1247.898388] RIP: 0033:0x1401443
+[ 1247.898399] Code: 89 c2 89 de 48 83 ec 08 e8 0a ff ff ff 48 63 cb 48 c1 e3 20 49 89 c5 49 8b 07 49 8d 7d 0f 49 89 45 ff 49 89 5d 07 49 8b 06 fc <f3> 48 ab 49 8b 84 24 00 02 00 00 49 39 84 24 08 02 00 00 74 28 48
+[ 1247.898400] RSP: 002b:00007ffec5da8d40 EFLAGS: 00010206
+[ 1247.898402] RAX: 000027d3c9640069 RBX: 0003800300000000 RCX: 000000000000602d
+[ 1247.898404] RDX: ffffffffffffffff RSI: 00000000001c0028 RDI: 00003cde4ca91000
+[ 1247.898405] RBP: 00007ffec5da8d70 R08: 00000000323403f8 R09: 00003cde4c900000
+[ 1247.898406] R10: 00007eba31f6fd20 R11: 00007eba31f6fce0 R12: 00000000322d2000
+[ 1247.898406] R13: 00003cde4c901141 R14: 00000000322d2270 R15: 00000000322d2420
+[ 1247.898408]  </TASK>
+[ 1247.898409] memory: usage 524288kB, limit 524288kB, failcnt 1756
+[ 1247.898410] swap: usage 0kB, limit 524288kB, failcnt 0
+[ 1247.898411] Memory cgroup stats for /system.slice/docker-d3137ed5bcc2fb7dd695dc41df0b4be7e9871da737a97e728235e8d69b6f37d2.scope:
+[ 1247.898424] anon 499040256
+[ 1247.898425] file 20852736
+[ 1247.898426] kernel 16916480
+[ 1247.898426] kernel_stack 1540096
+[ 1247.898427] pagetables 11595776
+[ 1247.898428] sec_pagetables 0
+[ 1247.898428] percpu 1584
+[ 1247.898429] sock 61440
+[ 1247.898429] vmalloc 147456
+[ 1247.898430] shmem 0
+[ 1247.898430] zswap 0
+[ 1247.898431] zswapped 0
+[ 1247.898431] file_mapped 0
+[ 1247.898432] file_dirty 4829184
+[ 1247.898432] file_writeback 15974400
+[ 1247.898433] swapcached 0
+[ 1247.898434] anon_thp 0
+[ 1247.898434] file_thp 0
+[ 1247.898435] shmem_thp 0
+[ 1247.898435] inactive_anon 68792320
+[ 1247.898436] active_anon 430247936
+[ 1247.898436] inactive_file 20852736
+[ 1247.898437] active_file 0
+[ 1247.898437] unevictable 0
+[ 1247.898438] slab_reclaimable 1226024
+[ 1247.898438] slab_unreclaimable 2108184
+[ 1247.898439] slab 3334208
+[ 1247.898440] workingset_refault_anon 0
+[ 1247.898440] workingset_refault_file 1127
+[ 1247.898441] workingset_activate_anon 0
+[ 1247.898441] workingset_activate_file 240
+[ 1247.898442] workingset_restore_anon 0
+[ 1247.898442] workingset_restore_file 0
+[ 1247.898443] workingset_nodereclaim 0
+[ 1247.898444] pgscan 32201
+[ 1247.898444] pgsteal 31506
+[ 1247.898445] pgscan_kswapd 29574
+[ 1247.898445] pgscan_direct 2627
+[ 1247.898446] pgscan_khugepaged 0
+[ 1247.898446] pgsteal_kswapd 29571
+[ 1247.898447] pgsteal_direct 1935
+[ 1247.898447] pgsteal_khugepaged 0
+[ 1247.898448] pgfault 379004
+[ 1247.898448] pgmajfault 41
+[ 1247.898449] pgrefill 676821
+[ 1247.898450] pgactivate 672
+[ 1247.898450] pgdeactivate 0
+[ 1247.898451] pglazyfree 0
+[ 1247.898451] pglazyfreed 0
+[ 1247.898452] zswpin 0
+[ 1247.898452] zswpout 0
+[ 1247.898453] zswpwb 0
+[ 1247.898453] thp_fault_alloc 0
+[ 1247.898454] thp_collapse_alloc 0
+[ 1247.898454] thp_swpout 0
+[ 1247.898455] thp_swpout_fallback 0
+[ 1247.898455] Tasks state (memory values in pages):
+[ 1247.898456] [  pid  ]   uid  tgid total_vm      rss rss_anon rss_file rss_shmem pgtables_bytes swapents oom_score_adj name
+[ 1247.898457] [  14061]     0 14061     1157      896      128      768         0    53248        0             0 bash
+[ 1247.898460] [  14347]     0 14347      723      416        0      416         0    45056        0             0 sh
+[ 1247.898462] [  14443]     0 14443      723      480       32      448         0    45056        0             0 sh
+[ 1247.898464] [  14499]     0 14499   253639    11920     1968     9952         0   557056        0             0 node
+[ 1247.898466] [  14534]     0 14534      723      416        0      416         0    45056        0             0 sh
+[ 1247.898468] [  14543]     0 14543  2946599    30797    17485    13312         0  1683456        0             0 node
+[ 1247.898470] [  14594]     0 14594      723      416        0      416         0    45056        0             0 sh
+[ 1247.898471] [  14804]     0 14804   263647    15850     4010    11840         0   745472        0             0 node
+[ 1247.898473] [  15111]     0 15111      723      416        0      416         0    49152        0             0 sh
+[ 1247.898475] [  15211]     0 15211      723      448       32      416         0    49152        0             0 sh
+[ 1247.898477] [  15329]     0 15329   253575    11911     1959     9952         0   548864        0             0 node
+[ 1247.898478] [  15438]     0 15438      723      416        0      416         0    49152        0             0 sh
+[ 1247.898480] [  15463]     0 15463   256453    16251     5371    10880         0   552960        0             0 node
+[ 1247.898482] [  15518]     0 15518   187397    11328     1856     9472         0   495616        0             0 node
+[ 1247.898483] [  15531]     0 15531   282940    14617     2745    11872         0   675840        0             0 node
+[ 1247.898485] [  15542]     0 15542  8384026    90517    77077    13440         0  4313088        0             0 node
+[ 1247.898487] [  15924]     0 15924   187324    11232     1760     9472         0   487424        0             0 node
+[ 1247.898488] [  15949]     0 15949      698      352        0      352         0    53248        0             0 sleep
+[ 1247.898490] [  15950]     0 15950      698      352        0      352         0    49152        0             0 sleep
+[ 1247.898491] [  15964]     0 15964      723      416        0      416         0    49152        0             0 sh
+[ 1247.898493] [  15972]     0 15972  2889389    18047     7007    11040         0  1003520        0             0 node
+[ 1247.898494] oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=docker-d3137ed5bcc2fb7dd695dc41df0b4be7e9871da737a97e728235e8d69b6f37d2.scope,mems_allowed=0,oom_memcg=/system.slice/docker-d3137ed5bcc2fb7dd695dc41df0b4be7e9871da737a97e728235e8d69b6f37d2.scope,task_memcg=/system.slice/docker-d3137ed5bcc2fb7dd695dc41df0b4be7e9871da737a97e728235e8d69b6f37d2.scope,task=node,pid=15542,uid=0
+[ 1247.898514] Memory cgroup out of memory: Killed process 15542 (node) total-vm:33536104kB, anon-rss:308308kB, file-rss:53760kB, shmem-rss:0kB, UID:0 pgtables:4212kB oom_score_adj:0
+[ 1253.363755] systemd-journald[289]: Under memory pressure, flushing caches.
+[ 1253.659706] systemd-journald[289]: Under memory pressure, flushing caches.
+[ 1257.727004] node invoked oom-killer: gfp_mask=0xcc0(GFP_KERNEL), order=0, oom_score_adj=0
+[ 1257.727012] CPU: 0 PID: 16086 Comm: node Not tainted 6.8.0-107-generic #107-Ubuntu
+[ 1257.727014] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[ 1257.727016] Call Trace:
+[ 1257.727024]  <TASK>
+[ 1257.727027]  dump_stack_lvl+0x76/0xa0
+[ 1257.727031]  dump_stack+0x10/0x20
+[ 1257.727032]  dump_header+0x49/0x210
+[ 1257.727035]  oom_kill_process+0x118/0x280
+[ 1257.727037]  out_of_memory+0x103/0x350
+[ 1257.727039]  mem_cgroup_out_of_memory+0x145/0x170
+[ 1257.727042]  try_charge_memcg+0x6d6/0x7d0
+[ 1257.727044]  ? vma_alloc_folio+0x7a/0xd0
+[ 1257.727047]  __mem_cgroup_charge+0x45/0xc0
+[ 1257.727050]  do_anonymous_page+0xb2/0x430
+[ 1257.727052]  handle_pte_fault+0x1cb/0x1d0
+[ 1257.727053]  __handle_mm_fault+0x654/0x790
+[ 1257.727055]  handle_mm_fault+0x18a/0x380
+[ 1257.727057]  do_user_addr_fault+0x169/0x670
+[ 1257.727060]  exc_page_fault+0x83/0x1b0
+[ 1257.727063]  asm_exc_page_fault+0x27/0x30
+[ 1257.727065] RIP: 0033:0x7a59414cc994
+[ 1257.727075] Code: fe 6f 5e 60 c5 fe 6f 64 16 e0 c5 fe 6f 6c 16 c0 c5 fe 6f 74 16 a0 c5 fe 6f 7c 16 80 c5 fe 7f 07 c5 fe 7f 4f 20 c5 fe 7f 57 40 <c5> fe 7f 5f 60 c5 fe 7f 64 17 e0 c5 fe 7f 6c 17 c0 c5 fe 7f 74 17
+[ 1257.727076] RSP: 002b:00007a593b7fd908 EFLAGS: 00010202
+[ 1257.727079] RAX: 00002ae122ba5f98 RBX: 0000000000000098 RCX: 00002ae122ba5f91
+[ 1257.727080] RDX: 0000000000000090 RSI: 0000385c468538f8 RDI: 00002ae122ba5f98
+[ 1257.727081] RBP: 00007a593b7fd990 R08: 0000385c468538f0 R09: 000000000000005b
+[ 1257.727082] R10: 00002ae122ba5f90 R11: 00002ae122ba5f98 R12: 000006ea489030d9
+[ 1257.727083] R13: 0000385c468538f1 R14: 00002ae122ba0948 R15: 000000002865a600
+[ 1257.727085]  </TASK>
+[ 1257.727086] memory: usage 524288kB, limit 524288kB, failcnt 9440
+[ 1257.727087] swap: usage 0kB, limit 524288kB, failcnt 0
+[ 1257.727088] Memory cgroup stats for /system.slice/docker-d3137ed5bcc2fb7dd695dc41df0b4be7e9871da737a97e728235e8d69b6f37d2.scope:
+[ 1257.727101] anon 520986624
+[ 1257.727102] file 45056
+[ 1257.727103] kernel 15835136
+[ 1257.727104] kernel_stack 1277952
+[ 1257.727104] pagetables 11632640
+[ 1257.727105] sec_pagetables 0
+[ 1257.727105] percpu 1428
+[ 1257.727106] sock 4096
+[ 1257.727106] vmalloc 135168
+[ 1257.727107] shmem 0
+[ 1257.727107] zswap 0
+[ 1257.727108] zswapped 0
+[ 1257.727109] file_mapped 0
+[ 1257.727109] file_dirty 28672
+[ 1257.727110] file_writeback 0
+[ 1257.727110] swapcached 0
+[ 1257.727111] anon_thp 0
+[ 1257.727111] file_thp 0
+[ 1257.727112] shmem_thp 0
+[ 1257.727112] inactive_anon 392069120
+[ 1257.727113] active_anon 128917504
+[ 1257.727113] inactive_file 40960
+[ 1257.727114] active_file 4096
+[ 1257.727114] unevictable 0
+[ 1257.727115] slab_reclaimable 612456
+[ 1257.727116] slab_unreclaimable 1901960
+[ 1257.727116] slab 2514416
+[ 1257.727117] workingset_refault_anon 0
+[ 1257.727117] workingset_refault_file 8128
+[ 1257.727118] workingset_activate_anon 0
+[ 1257.727118] workingset_activate_file 240
+[ 1257.727119] workingset_restore_anon 0
+[ 1257.727120] workingset_restore_file 0
+[ 1257.727120] workingset_nodereclaim 0
+[ 1257.727121] pgscan 44891
+[ 1257.727121] pgsteal 43973
+[ 1257.727122] pgscan_kswapd 29574
+[ 1257.727122] pgscan_direct 15317
+[ 1257.727123] pgscan_khugepaged 0
+[ 1257.727123] pgsteal_kswapd 29571
+[ 1257.727124] pgsteal_direct 14402
+[ 1257.727124] pgsteal_khugepaged 0
+[ 1257.727125] pgfault 513920
+[ 1257.727126] pgmajfault 74
+[ 1257.727126] pgrefill 708173
+[ 1257.727127] pgactivate 902
+[ 1257.727127] pgdeactivate 0
+[ 1257.727128] pglazyfree 0
+[ 1257.727128] pglazyfreed 0
+[ 1257.727129] zswpin 0
+[ 1257.727129] zswpout 0
+[ 1257.727130] zswpwb 0
+[ 1257.727130] thp_fault_alloc 0
+[ 1257.727131] thp_collapse_alloc 0
+[ 1257.727131] thp_swpout 0
+[ 1257.727132] thp_swpout_fallback 0
+[ 1257.727133] Tasks state (memory values in pages):
+[ 1257.727133] [  pid  ]   uid  tgid total_vm      rss rss_anon rss_file rss_shmem pgtables_bytes swapents oom_score_adj name
+[ 1257.727134] [  14061]     0 14061     1157      896      128      768         0    53248        0             0 bash
+[ 1257.727137] [  14347]     0 14347      723      416        0      416         0    45056        0             0 sh
+[ 1257.727139] [  14443]     0 14443      723      480       32      448         0    45056        0             0 sh
+[ 1257.727141] [  14499]     0 14499   253639    11920     1968     9952         0   557056        0             0 node
+[ 1257.727143] [  14534]     0 14534      723      416        0      416         0    45056        0             0 sh
+[ 1257.727145] [  14543]     0 14543  2944638    27851    14539    13312         0  1384448        0             0 node
+[ 1257.727147] [  14594]     0 14594      723      416        0      416         0    45056        0             0 sh
+[ 1257.727149] [  14804]     0 14804   263647    15882     4042    11840         0   745472        0             0 node
+[ 1257.727151] [  15111]     0 15111      723      416        0      416         0    49152        0             0 sh
+[ 1257.727152] [  15211]     0 15211      723      448       32      416         0    49152        0             0 sh
+[ 1257.727154] [  15329]     0 15329   253575    11911     1959     9952         0   548864        0             0 node
+[ 1257.727156] [  15438]     0 15438      723      416        0      416         0    49152        0             0 sh
+[ 1257.727157] [  15463]     0 15463   256453    16283     5403    10880         0   552960        0             0 node
+[ 1257.727159] [  15531]     0 15531   282940    14617     2745    11872         0   675840        0             0 node
+[ 1257.727161] [  16042]     0 16042      723      448        0      448         0    45056        0             0 sh
+[ 1257.727163] [  16069]     0 16069   187324    11296     1792     9504         0   483328        0             0 node
+[ 1257.727164] [  16082]     0 16082  5780198   107318    94262    13056         0  6119424        0             0 node
+[ 1257.727166] [  16131]     0 16131      698      384        0      384         0    45056        0             0 sleep
+[ 1257.727168] [  16137]     0 16137      698      384        0      384         0    49152        0             0 sleep
+[ 1257.727169] [  16139]     0 16139      698      384        0      384         0    45056        0             0 sleep
+[ 1257.727171] oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=docker-d3137ed5bcc2fb7dd695dc41df0b4be7e9871da737a97e728235e8d69b6f37d2.scope,mems_allowed=0,oom_memcg=/system.slice/docker-d3137ed5bcc2fb7dd695dc41df0b4be7e9871da737a97e728235e8d69b6f37d2.scope,task_memcg=/system.slice/docker-d3137ed5bcc2fb7dd695dc41df0b4be7e9871da737a97e728235e8d69b6f37d2.scope,task=node,pid=16082,uid=0
+[ 1257.727189] Memory cgroup out of memory: Killed process 16082 (node) total-vm:23120792kB, anon-rss:377048kB, file-rss:52224kB, shmem-rss:0kB, UID:0 pgtables:5976kB oom_score_adj:0
+[ 1259.802023] systemd-journald[289]: Under memory pressure, flushing caches.
+[ 1261.157770] node invoked oom-killer: gfp_mask=0xcc0(GFP_KERNEL), order=0, oom_score_adj=0
+[ 1261.157778] CPU: 0 PID: 16217 Comm: node Not tainted 6.8.0-107-generic #107-Ubuntu
+[ 1261.157781] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[ 1261.157782] Call Trace:
+[ 1261.157784]  <TASK>
+[ 1261.157786]  dump_stack_lvl+0x76/0xa0
+[ 1261.157790]  dump_stack+0x10/0x20
+[ 1261.157791]  dump_header+0x49/0x210
+[ 1261.157795]  oom_kill_process+0x118/0x280
+[ 1261.157797]  out_of_memory+0x103/0x350
+[ 1261.157799]  mem_cgroup_out_of_memory+0x145/0x170
+[ 1261.157802]  try_charge_memcg+0x6d6/0x7d0
+[ 1261.157804]  ? vma_alloc_folio+0x7a/0xd0
+[ 1261.157807]  __mem_cgroup_charge+0x45/0xc0
+[ 1261.157810]  do_anonymous_page+0xb2/0x430
+[ 1261.157812]  handle_pte_fault+0x1cb/0x1d0
+[ 1261.157813]  __handle_mm_fault+0x654/0x790
+[ 1261.157815]  handle_mm_fault+0x18a/0x380
+[ 1261.157817]  do_user_addr_fault+0x169/0x670
+[ 1261.157820]  exc_page_fault+0x83/0x1b0
+[ 1261.157823]  asm_exc_page_fault+0x27/0x30
+[ 1261.157825] RIP: 0033:0x14dbe7b
+[ 1261.157835] Code: 48 c1 e0 04 66 89 4a 02 48 01 d0 4c 89 10 89 58 08 e9 c1 f8 ff ff 49 8b 4d 07 49 89 0b 48 85 d2 0f 84 45 fa ff ff 48 8b 56 08 <49> 89 53 08 48 83 f8 02 0f 84 33 fa ff ff 48 8b 56 10 49 89 53 10
+[ 1261.157837] RSP: 002b:0000758ee6ffc910 EFLAGS: 00010202
+[ 1261.157839] RAX: 0000000000000003 RBX: 0000000000000020 RCX: 00000e1969fc0c31
+[ 1261.157840] RDX: 00000e1969fc0c31 RSI: 00001ee65540de50 RDI: 00000b09a8353058
+[ 1261.157841] RBP: 0000758ee6ffc990 R08: 00001ee65540de48 R09: 000000000000002f
+[ 1261.157842] R10: 00003f462a4beff0 R11: 00003f462a4beff8 R12: 00002e62307aa151
+[ 1261.157843] R13: 00001ee65540de49 R14: 00003f462a4bc1d8 R15: 000000002ee5f170
+[ 1261.157845]  </TASK>
+[ 1261.157846] memory: usage 524288kB, limit 524288kB, failcnt 16868
+[ 1261.157847] swap: usage 0kB, limit 524288kB, failcnt 0
+[ 1261.157848] Memory cgroup stats for /system.slice/docker-d3137ed5bcc2fb7dd695dc41df0b4be7e9871da737a97e728235e8d69b6f37d2.scope:
+[ 1261.157860] anon 520339456
+[ 1261.157861] file 20480
+[ 1261.157861] kernel 16506880
+[ 1261.157862] kernel_stack 1277952
+[ 1261.157862] pagetables 11689984
+[ 1261.157863] sec_pagetables 0
+[ 1261.157864] percpu 1428
+[ 1261.157864] sock 4096
+[ 1261.157865] vmalloc 135168
+[ 1261.157865] shmem 0
+[ 1261.157866] zswap 0
+[ 1261.157866] zswapped 0
+[ 1261.157867] file_mapped 0
+[ 1261.157867] file_dirty 0
+[ 1261.157868] file_writeback 0
+[ 1261.157869] swapcached 0
+[ 1261.157869] anon_thp 0
+[ 1261.157870] file_thp 0
+[ 1261.157870] shmem_thp 0
+[ 1261.157871] inactive_anon 391700480
+[ 1261.157871] active_anon 128638976
+[ 1261.157872] inactive_file 0
+[ 1261.157872] active_file 20480
+[ 1261.157873] unevictable 0
+[ 1261.157874] slab_reclaimable 1225872
+[ 1261.157874] slab_unreclaimable 1902808
+[ 1261.157875] slab 3128680
+[ 1261.157875] workingset_refault_anon 0
+[ 1261.157876] workingset_refault_file 15504
+[ 1261.157876] workingset_activate_anon 0
+[ 1261.157877] workingset_activate_file 241
+[ 1261.157878] workingset_restore_anon 0
+[ 1261.157878] workingset_restore_file 0
+[ 1261.157879] workingset_nodereclaim 0
+[ 1261.157879] pgscan 52529
+[ 1261.157880] pgsteal 51357
+[ 1261.157880] pgscan_kswapd 29574
+[ 1261.157881] pgscan_direct 22955
+[ 1261.157881] pgscan_khugepaged 0
+[ 1261.157882] pgsteal_kswapd 29571
+[ 1261.157883] pgsteal_direct 21786
+[ 1261.157883] pgsteal_khugepaged 0
+[ 1261.157884] pgfault 643567
+[ 1261.157884] pgmajfault 107
+[ 1261.157885] pgrefill 708883
+[ 1261.157885] pgactivate 1149
+[ 1261.157886] pgdeactivate 0
+[ 1261.157886] pglazyfree 0
+[ 1261.157887] pglazyfreed 0
+[ 1261.157887] zswpin 0
+[ 1261.157888] zswpout 0
+[ 1261.157888] zswpwb 0
+[ 1261.157889] thp_fault_alloc 0
+[ 1261.157890] thp_collapse_alloc 0
+[ 1261.157933] thp_swpout 0
+[ 1261.157934] thp_swpout_fallback 0
+[ 1261.157935] Tasks state (memory values in pages):
+[ 1261.157936] [  pid  ]   uid  tgid total_vm      rss rss_anon rss_file rss_shmem pgtables_bytes swapents oom_score_adj name
+[ 1261.157937] [  14061]     0 14061     1157      896      128      768         0    53248        0             0 bash
+[ 1261.160746] [  14347]     0 14347      723      416        0      416         0    45056        0             0 sh
+[ 1261.160750] [  14443]     0 14443      723      480       32      448         0    45056        0             0 sh
+[ 1261.160753] [  14499]     0 14499   253639    11920     1968     9952         0   557056        0             0 node
+[ 1261.160755] [  14534]     0 14534      723      416        0      416         0    45056        0             0 sh
+[ 1261.160758] [  14543]     0 14543  2944638    27883    14571    13312         0  1384448        0             0 node
+[ 1261.160760] [  14594]     0 14594      723      416        0      416         0    45056        0             0 sh
+[ 1261.160841] [  14804]     0 14804   263647    15882     4042    11840         0   745472        0             0 node
+[ 1261.160844] [  15111]     0 15111      723      416        0      416         0    49152        0             0 sh
+[ 1261.160846] [  15211]     0 15211      723      448       32      416         0    49152        0             0 sh
+[ 1261.160848] [  15329]     0 15329   253575    11911     1959     9952         0   548864        0             0 node
+[ 1261.160850] [  15438]     0 15438      723      416        0      416         0    49152        0             0 sh
+[ 1261.160852] [  15463]     0 15463   256453    16283     5403    10880         0   552960        0             0 node
+[ 1261.160855] [  15531]     0 15531   282940    14617     2745    11872         0   675840        0             0 node
+[ 1261.160857] [  16042]     0 16042      723      448        0      448         0    45056        0             0 sh
+[ 1261.160894] [  16193]     0 16193   187324    11296     1792     9504         0   487424        0             0 node
+[ 1261.161109] [  16212]     0 16212  5780126   107073    94081    12992         0  6160384        0             0 node
+[ 1261.161113] [  16243]     0 16243      698      384        0      384         0    49152        0             0 sleep
+[ 1261.161115] [  16250]     0 16250      698      352        0      352         0    53248        0             0 sleep
+[ 1261.161116] [  16253]     0 16253      698      384        0      384         0    49152        0             0 sleep
+[ 1261.161118] oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=docker-d3137ed5bcc2fb7dd695dc41df0b4be7e9871da737a97e728235e8d69b6f37d2.scope,mems_allowed=0,oom_memcg=/system.slice/docker-d3137ed5bcc2fb7dd695dc41df0b4be7e9871da737a97e728235e8d69b6f37d2.scope,task_memcg=/system.slice/docker-d3137ed5bcc2fb7dd695dc41df0b4be7e9871da737a97e728235e8d69b6f37d2.scope,task=node,pid=16212,uid=0
+[ 1261.161138] Memory cgroup out of memory: Killed process 16212 (node) total-vm:23120504kB, anon-rss:376324kB, file-rss:51968kB, shmem-rss:0kB, UID:0 pgtables:6016kB oom_score_adj:0
+[ 1440.893597] malloc_cgroup invoked oom-killer: gfp_mask=0x100cca(GFP_HIGHUSER_MOVABLE), order=0, oom_score_adj=0
+[ 1440.893605] CPU: 0 PID: 19095 Comm: malloc_cgroup Not tainted 6.8.0-107-generic #107-Ubuntu
+[ 1440.893608] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[ 1440.893610] Call Trace:
+[ 1440.893611]  <TASK>
+[ 1440.893614]  dump_stack_lvl+0x76/0xa0
+[ 1440.893618]  dump_stack+0x10/0x20
+[ 1440.893619]  dump_header+0x49/0x210
+[ 1440.893622]  oom_kill_process+0x118/0x280
+[ 1440.893624]  out_of_memory+0x103/0x350
+[ 1440.893626]  mem_cgroup_out_of_memory+0x145/0x170
+[ 1440.893629]  try_charge_memcg+0x6d6/0x7d0
+[ 1440.893632]  ? __alloc_pages+0x1e9/0x350
+[ 1440.893635]  __mem_cgroup_charge+0x45/0xc0
+[ 1440.893637]  __filemap_add_folio+0x1da/0x4a0
+[ 1440.893639]  ? __pfx_workingset_update_node+0x10/0x10
+[ 1440.893642]  filemap_add_folio+0x3d/0xb0
+[ 1440.893644]  __filemap_get_folio+0x16c/0x2e0
+[ 1440.893646]  filemap_fault+0x15c/0x8e0
+[ 1440.893649]  __do_fault+0x3d/0x190
+[ 1440.893651]  do_read_fault+0x133/0x200
+[ 1440.893653]  do_fault+0xf0/0x260
+[ 1440.893655]  handle_pte_fault+0x114/0x1d0
+[ 1440.893657]  __handle_mm_fault+0x654/0x790
+[ 1440.893659]  handle_mm_fault+0x18a/0x380
+[ 1440.893661]  do_user_addr_fault+0x169/0x670
+[ 1440.893664]  exc_page_fault+0x83/0x1b0
+[ 1440.893667]  asm_exc_page_fault+0x27/0x30
+[ 1440.893668] RIP: 0033:0x56338721a29b
+[ 1440.893693] Code: Unable to access opcode bytes at 0x56338721a271.
+[ 1440.893694] RSP: 002b:00007fffdb1ed080 EFLAGS: 00010202
+[ 1440.893696] RAX: 00007745b1361010 RBX: 0000000000000000 RCX: 00007745c6326aa7
+[ 1440.893698] RDX: 00007745ae1ff010 RSI: 0000000004001000 RDI: 0000000000000000
+[ 1440.893699] RBP: 00007fffdb1ed0c0 R08: 00007745ae1ff010 R09: 00007745ae1ff010
+[ 1440.893700] R10: 0000000000000022 R11: 0000000000000246 R12: 00007fffdb1ed1d8
+[ 1440.893701] R13: 000056338721a229 R14: 000056338721cd88 R15: 00007745c6470040
+[ 1440.893703]  </TASK>
+[ 1440.893710] memory: usage 524288kB, limit 524288kB, failcnt 38158
+[ 1440.893712] swap: usage 0kB, limit 524288kB, failcnt 0
+[ 1440.893712] Memory cgroup stats for /system.slice/docker-d3137ed5bcc2fb7dd695dc41df0b4be7e9871da737a97e728235e8d69b6f37d2.scope:
+[ 1440.893727] anon 524804096
+[ 1440.893728] file 16384
+[ 1440.893729] kernel 12050432
+[ 1440.893729] kernel_stack 999424
+[ 1440.893730] pagetables 5984256
+[ 1440.893730] sec_pagetables 0
+[ 1440.893731] percpu 1116
+[ 1440.893731] sock 0
+[ 1440.893732] vmalloc 98304
+[ 1440.893732] shmem 0
+[ 1440.893733] zswap 0
+[ 1440.893734] zswapped 0
+[ 1440.893734] file_mapped 0
+[ 1440.893735] file_dirty 0
+[ 1440.893735] file_writeback 0
+[ 1440.893736] swapcached 0
+[ 1440.893736] anon_thp 0
+[ 1440.893737] file_thp 0
+[ 1440.893737] shmem_thp 0
+[ 1440.893738] inactive_anon 159055872
+[ 1440.893738] active_anon 365748224
+[ 1440.893739] inactive_file 0
+[ 1440.893739] active_file 16384
+[ 1440.893740] unevictable 0
+[ 1440.893740] slab_reclaimable 3391944
+[ 1440.893741] slab_unreclaimable 1353368
+[ 1440.893742] slab 4745312
+[ 1440.893742] workingset_refault_anon 0
+[ 1440.893743] workingset_refault_file 16854
+[ 1440.893743] workingset_activate_anon 0
+[ 1440.893744] workingset_activate_file 1075
+[ 1440.893744] workingset_restore_anon 0
+[ 1440.893745] workingset_restore_file 14
+[ 1440.893745] workingset_nodereclaim 0
+[ 1440.893746] pgscan 135286
+[ 1440.893747] pgsteal 133865
+[ 1440.893747] pgscan_kswapd 29574
+[ 1440.893748] pgscan_direct 105712
+[ 1440.893748] pgscan_khugepaged 0
+[ 1440.893749] pgsteal_kswapd 29571
+[ 1440.893749] pgsteal_direct 104294
+[ 1440.893750] pgsteal_khugepaged 0
+[ 1440.893750] pgfault 1114883
+[ 1440.893751] pgmajfault 362
+[ 1440.893751] pgrefill 730445
+[ 1440.893752] pgactivate 1320
+[ 1440.893753] pgdeactivate 0
+[ 1440.893753] pglazyfree 0
+[ 1440.893754] pglazyfreed 0
+[ 1440.893754] zswpin 0
+[ 1440.893755] zswpout 0
+[ 1440.893755] zswpwb 0
+[ 1440.893756] thp_fault_alloc 0
+[ 1440.893756] thp_collapse_alloc 0
+[ 1440.893757] thp_swpout 0
+[ 1440.893757] thp_swpout_fallback 0
+[ 1440.893758] Tasks state (memory values in pages):
+[ 1440.893758] [  pid  ]   uid  tgid total_vm      rss rss_anon rss_file rss_shmem pgtables_bytes swapents oom_score_adj name
+[ 1440.893760] [  14061]     0 14061     1157      896      128      768         0    53248        0             0 bash
+[ 1440.893763] [  14443]     0 14443      723      480       32      448         0    45056        0             0 sh
+[ 1440.893765] [  14499]     0 14499   253639    11952     1968     9984         0   557056        0             0 node
+[ 1440.893768] [  14534]     0 14534      723      416        0      416         0    45056        0             0 sh
+[ 1440.893770] [  14543]     0 14543  2944894    28235    14923    13312         0  1421312        0             0 node
+[ 1440.893772] [  14804]     0 14804   266400    17361     5393    11968         0   868352        0             0 node
+[ 1440.893774] [  15111]     0 15111      723      416        0      416         0    49152        0             0 sh
+[ 1440.893776] [  15211]     0 15211      723      448       32      416         0    49152        0             0 sh
+[ 1440.893778] [  15329]     0 15329   253575    11911     1959     9952         0   548864        0             0 node
+[ 1440.893780] [  15463]     0 15463   256709    16874     5930    10944         0   598016        0             0 node
+[ 1440.893782] [  15531]     0 15531   315708    14649     2777    11872         0   684032        0             0 node
+[ 1440.893783] [  16857]     0 16857     1190      992      192      800         0    53248        0             0 bash
+[ 1440.893785] [  18764]     0 18764      723      416        0      416         0    53248        0             0 sh
+[ 1440.893787] [  19054]     0 19054      723      448        0      448         0    49152        0             0 sh
+[ 1440.893788] [  19095]     0 19095    99004    94912    94560      352         0   811008        0             0 malloc_cgroup
+[ 1440.893790] [  19098]     0 19098      698      352        0      352         0    53248        0             0 sleep
+[ 1440.893792] [  19102]     0 19102      698      352        0      352         0    45056        0             0 sleep
+[ 1440.893793] oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=docker-d3137ed5bcc2fb7dd695dc41df0b4be7e9871da737a97e728235e8d69b6f37d2.scope,mems_allowed=0,oom_memcg=/system.slice/docker-d3137ed5bcc2fb7dd695dc41df0b4be7e9871da737a97e728235e8d69b6f37d2.scope,task_memcg=/system.slice/docker-d3137ed5bcc2fb7dd695dc41df0b4be7e9871da737a97e728235e8d69b6f37d2.scope,task=malloc_cgroup,pid=19095,uid=0
+[ 1440.893802] Memory cgroup out of memory: Killed process 19095 (malloc_cgroup) total-vm:396016kB, anon-rss:378240kB, file-rss:1408kB, shmem-rss:0kB, UID:0 pgtables:792kB oom_score_adj:0

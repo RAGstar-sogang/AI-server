@@ -1,0 +1,5 @@
+[  747.358161] 81920 pages cma reserved
+[  747.358164] Tasks state (memory values in pages):
+[  747.358607] [   1604]     0  1604  2570484   224052 20631552     1271             0 invoke_memleak
+[  747.358612] oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=/,mems_allowed=0,global_oom,task_memcg=/,task=invoke_memleak,pid=1604,uid=0
+[  747.358652] Out of memory: Killed process 1604 (invoke_memleak) total-vm:10281936kB, anon-rss:896204kB, file-rss:4kB, shmem-rss:0kB, UID:0 pgtables:20148kB oom_score_adj:0

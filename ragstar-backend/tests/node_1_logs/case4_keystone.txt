@@ -1,0 +1,4 @@
+[Wed Aug 31 16:36:42 2016] Out of memory: Kill process 43805 (keystone-all) score 249 or sacrifice child
+[Wed Aug 31 16:36:42 2016] Killed process 43805 (keystone-all) total-vm:4446352kB, anon-rss:4053140kB, file-rss:68kB
+[Wed Aug 31 16:56:25 2016] keystone-all invoked oom-killer: gfp_mask=0x280da, order=0, oom_score_adj=0
+[Wed Aug 31 16:56:25 2016] CPU: 2 PID: 88196 Comm: keystone-all Not tainted 3.10.0-327.13.1.el7.x86_64 #1

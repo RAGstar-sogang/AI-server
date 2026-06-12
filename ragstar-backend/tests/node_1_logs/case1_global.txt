@@ -1,0 +1,9 @@
+[11686.040460] httpd invoked oom-killer: gfp_mask=0x280da, order=0, oom_score_adj=0
+[11686.040466] CPU: 2 PID: 3244 Comm: httpd Not tainted 4.18.0-305.el8.x86_64 #1
+[11686.040491] Mem-Info:
+[11686.040500] Node 0 Normal free:7296kB min:7360kB low:9200kB high:11040kB
+[11686.040515] Swap:  SwapTotal:       0 kB   SwapFree:        0 kB
+[11686.040523] 524288 pages RAM
+[11686.040549] [   3201]     0  3201    68432   218920  1789952        0             0 java
+[11686.040567] oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=/,mems_allowed=0,global_oom,task_memcg=/,task=java,pid=3201,uid=0,pgtables=1789952,score=836
+[11686.040575] Out of memory: Killed process 3201 (java) total-vm:273728kB, anon-rss:875680kB, file-rss:0kB, shmem-rss:0kB, UID:0

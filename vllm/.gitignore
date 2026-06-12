@@ -1,0 +1,42 @@
+# Python environments and caches
+.venv/
+.venv-*/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Runtime configuration
+serve.env
+*.local.env
+*.secret.env
+
+# Logs and process output
+logs/
+*.log
+nohup.out
+
+# Local model weights and download caches
+models/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.gguf
+*.onnx
+.cache/
+
+# Local tool state
+.uv/
+.python-version
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*~

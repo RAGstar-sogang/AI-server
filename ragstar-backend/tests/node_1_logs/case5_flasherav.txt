@@ -1,0 +1,6 @@
+[11686.040460] flasherav invoked oom-killer: gfp_mask=0x201da, order=0, oom_adj=0, oom_score_adj=0
+[11686.040472] Pid: 2859, comm: flasherav Not tainted 3.0.0-12-generic #20-Ubuntu
+[11686.040727] Free swap  = 0kB
+[11686.040729] Total swap = 524284kB
+[11686.043240] 262100 pages RAM
+[11686.043647] Killed process 2603 (flasherav) total-vm:1498536kB, anon-rss:721784kB, file-rss:4228kB

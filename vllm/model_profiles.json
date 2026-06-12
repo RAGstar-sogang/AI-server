@@ -1,0 +1,87 @@
+{
+  "qwen3.5-9b": {
+    "hf_id": "Qwen/Qwen3.5-9B",
+    "model_dir": "/workspace/vllm/models/Qwen/Qwen3.5-9B",
+    "served_model_name": "qwen3.5-9b",
+    "aliases": ["qwen", "qwen3.5", "qwen3.5:9b", "Qwen/Qwen3.5-9B"],
+    "env": {
+      "CUDA_VISIBLE_DEVICES": "0,1",
+      "TENSOR_PARALLEL_SIZE": "2",
+      "MAX_MODEL_LEN": "32768",
+      "MAX_NUM_BATCHED_TOKENS": "32768",
+      "MAX_NUM_SEQS": "32",
+      "GPU_MEMORY_UTILIZATION": "0.90",
+      "MAX_CUDAGRAPH_CAPTURE_SIZE": "1024",
+      "DTYPE": "auto",
+      "ENFORCE_EAGER": "1"
+    }
+  },
+  "qwen3.5-2b": {
+    "hf_id": "Qwen/Qwen3.5-2B",
+    "model_dir": "/workspace/vllm/models/Qwen/Qwen3.5-2B",
+    "served_model_name": "qwen3.5-2b",
+    "aliases": ["qwen2b", "qwen-2b", "qwen3.5:2b", "Qwen/Qwen3.5-2B"],
+    "env": {
+      "CUDA_VISIBLE_DEVICES": "0",
+      "TENSOR_PARALLEL_SIZE": "1",
+      "MAX_MODEL_LEN": "32768",
+      "MAX_NUM_BATCHED_TOKENS": "32768",
+      "MAX_NUM_SEQS": "64",
+      "GPU_MEMORY_UTILIZATION": "0.85",
+      "MAX_CUDAGRAPH_CAPTURE_SIZE": "1024",
+      "DTYPE": "auto",
+      "ENFORCE_EAGER": "1"
+    }
+  },
+  "qwen3.5-0.8b": {
+    "hf_id": "Qwen/Qwen3.5-0.8B",
+    "model_dir": "/workspace/vllm/models/Qwen/Qwen3.5-0.8B",
+    "served_model_name": "qwen3.5-0.8b",
+    "aliases": ["qwen0.8b", "qwen-0.8b", "qwen08b", "qwen3.5:0.8b", "Qwen/Qwen3.5-0.8B"],
+    "env": {
+      "CUDA_VISIBLE_DEVICES": "0",
+      "TENSOR_PARALLEL_SIZE": "1",
+      "MAX_MODEL_LEN": "32768",
+      "MAX_NUM_BATCHED_TOKENS": "32768",
+      "MAX_NUM_SEQS": "96",
+      "GPU_MEMORY_UTILIZATION": "0.80",
+      "MAX_CUDAGRAPH_CAPTURE_SIZE": "1024",
+      "DTYPE": "auto",
+      "ENFORCE_EAGER": "1"
+    }
+  },
+  "gemma-4-e4b-it": {
+    "hf_id": "google/gemma-4-E4B-it",
+    "model_dir": "/workspace/vllm/models/google/gemma-4-E4B-it",
+    "served_model_name": "gemma-4-e4b-it",
+    "aliases": ["gemma4", "gemma4-e4b", "gemma-4-e4b", "gemma-4-E4B-it", "google/gemma-4-E4B-it"],
+    "env": {
+      "CUDA_VISIBLE_DEVICES": "0,1",
+      "TENSOR_PARALLEL_SIZE": "2",
+      "MAX_MODEL_LEN": "32768",
+      "MAX_NUM_BATCHED_TOKENS": "32768",
+      "MAX_NUM_SEQS": "48",
+      "GPU_MEMORY_UTILIZATION": "0.90",
+      "MAX_CUDAGRAPH_CAPTURE_SIZE": "1024",
+      "DTYPE": "auto",
+      "ENFORCE_EAGER": "1"
+    }
+  },
+  "gemma-4-e2b-it": {
+    "hf_id": "google/gemma-4-E2B-it",
+    "model_dir": "/workspace/vllm/models/google/gemma-4-E2B-it",
+    "served_model_name": "gemma-4-e2b-it",
+    "aliases": ["gemma4-e2b", "gemma-4-e2b", "gemma-4-E2B-it", "google/gemma-4-E2B-it"],
+    "env": {
+      "CUDA_VISIBLE_DEVICES": "0",
+      "TENSOR_PARALLEL_SIZE": "1",
+      "MAX_MODEL_LEN": "32768",
+      "MAX_NUM_BATCHED_TOKENS": "32768",
+      "MAX_NUM_SEQS": "64",
+      "GPU_MEMORY_UTILIZATION": "0.80",
+      "MAX_CUDAGRAPH_CAPTURE_SIZE": "1024",
+      "DTYPE": "auto",
+      "ENFORCE_EAGER": "1"
+    }
+  }
+}

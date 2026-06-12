@@ -1,0 +1,105 @@
+# Python environments and caches
+.venv/
+.venv-*/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+
+# Local environment/config files
+.codex
+.env
+.env.*
+*.env
+*.local.env
+*.secret.env
+!*.env.example
+!serve.env.example
+
+# Runtime logs and process output
+logs/
+*.log
+nohup.out
+
+# Model weights and local model stores
+models/
+**/models/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.gguf
+*.onnx
+
+# vLLM local runtime state
+vllm/.venv-vllm/
+vllm/.venv/
+vllm/serve.env
+vllm/logs/
+vllm/models/
+
+# Ollama local runtime state
+ollama-serving/models/
+ollama.log
+
+# Backend local runtime state
+ragstar-backend/.venv/
+ragstar-backend/.env
+ragstar-backend/.env.*
+!ragstar-backend/.env.example
+# chroma_db and data/ are committed on purpose (the dataset is being open-sourced).
+# The HNSW index .bin files live under chroma_db and must be kept (global *.bin
+# rule would otherwise drop them, leaving a half-broken DB):
+!ragstar-backend/chroma_db/**/*.bin
+# Only the experiment-run outputs are kept out of the repo:
+ragstar-backend/data/exp_results/
+ragstar-backend/logs/
+# docs/: keep only the data pipeline (*.py, *.csv); drop document files.
+ragstar-backend/docs/*.pdf
+ragstar-backend/docs/*.txt
+ragstar-backend/docs/*.md
+ragstar-backend/docs/*.docx
+ragstar-backend/graph.log
+ragstar-backend/experiments/*.log
+
+# Migration snapshots from the old machine/container
+_migration_meta/
+
+# Local package/tool caches
+.cache/
+.uv/
+pip-wheel-metadata/
+build/
+dist/
+*.egg-info/
+
+# Local backup/scratch copies (kept on disk, not for the repo)
+*_old.*
+*_old/
+*.original.*
+*_original.*
+*.orig
+*.backup
+*.backup_*
+*.bak
+
+# Personal pyenv local env name (points to a virtualenv that only exists locally)
+.python-version
+
+# Draft report document (not part of the open dataset/code)
+/RAGstar_결과보고서_본문_보강.md
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*~
+
+# Claude Code local config
+.claude/

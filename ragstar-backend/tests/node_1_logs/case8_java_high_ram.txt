@@ -1,0 +1,54 @@
+Apr 14 14:13:32 sha2uvp-gert01 kernel: telegraf invoked OOM-killer: gfp_mask=0x201da, order=0, oom_score_adj=0
+Apr 14 14:13:36 sha2uvp-gert01 kernel: Free swap  = 0kB
+Apr 14 14:13:36 sha2uvp-gert01 kernel: Total swap = 8191996kB
+Apr 14 14:13:36 sha2uvp-gert01 kernel: 9437070 pages RAM
+Apr 14 14:13:36 sha2uvp-gert01 kernel: 0 pages HighMem/MovableOnly
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [ pid ]   uid  tgid total_vm      rss nr_ptes swapents oom_score_adj name
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [  682]     0   682    11356        7      25      417         -1000 systemd-udevd
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [  685]     0   685    68064       71      32       82             0 lvmetad
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [  865]     0   865    13877       31      26       83         -1000 auditd
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [  889]     0   889     6594       48      18       37             0 systemd-logind
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [  890]     0   890     5421       55      15       47             0 irqbalance
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [  891]    81   891    14549       77      32       86          -900 dbus-daemon
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [  894]   999   894   134633      113      60     1542             0 polkitd
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [  917]     0   917   119059      209      87      378             0 NetworkManager
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [  918]     0   918    24911        0      42      402             0 VGAuthService
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [  919]     0   919    74673      264      59      221             0 vmtoolsd
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [  937]     0   937    31571       27      20      130             0 crond
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [  944]     0   944     6476        0      18       52             0 atd
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [  948]     0   948    27522        1      10       30             0 agetty
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [ 1862]  1005  1862    28426        2      15      203             0 watchdog
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [ 1869]  1005  1869    28457        2      13      206             0 watchdog
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [ 2180]     0  2180    28202       28      57      232         -1000 sshd
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [ 2190]     0  2190   143452      719      96     2592             0 tuned
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [ 2198]     0  2198    28924       24      13       19             0 rhsmcertd
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [ 2200]     0  2200     6791       16      18       47             0 xinetd
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [ 2212]     0  2212    62286      499      49      131             0 rsyslogd
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [ 2223]  1005  2223  1983226    54375     364    52615             0 java
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [ 2231]  1005  2231  7698184   381153    2212   328643             0 java
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [ 2485]     0  2485    22506       31      45      248             0 master
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [ 2505]    89  2505    22576       39      46      248             0 qmgr
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [ 4408]     0  4408    11674       88      23      220             0 nginx
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [ 4409]   995  4409    11836      209      25      277             0 nginx
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [ 4668]     0  4668    28858        2      14       99             0 mysqld_safe
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [ 5205]   996  5205  1285299    28846     522   180556             0 mysqld
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [ 6033]  1005  6033  7482510  2656268    8492  1473287             0 java
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [ 6534]    38  6534     6432       41      18      110             0 ntpd
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [29836]    89 29836    22532      273      47        0             0 pickup
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [29881]     0 29881    10046     1402      24        0             0 systemd-journal
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [31378]   997 31378   476530     5652      97        0             0 telegraf
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [ 9281]     0  9281    30814       58      17        0             0 anacron
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [10474]     0 10474    39167      342      80        0             0 sshd
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [10480]  1000 10480    39249      417      79        0             0 sshd
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [10971]  1000 10971    28293       45      13        0             0 sh
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [10983]     0 10983    54632      268      62        0             0 sudo
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [10984]     0 10984    28294       44      13        0             0 sh
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [10985]     0 10985   128215    13778     169        0             0 python
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [11454]  1000 11454    28293       44      13        0             0 sh
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [11467]     0 11467    54632      269      64        0             0 sudo
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [11469]     0 11469    28294       45      14        0             0 sh
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [11470]     0 11470   103610     7871     158        0             0 python
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [11541]     0 11541   147024    28946     207        0             0 yum
+Apr 14 14:13:36 sha2uvp-gert01 kernel: [11708]   997 11708     1252       45       6        0             0 udevadm
+Apr 14 14:13:36 sha2uvp-gert01 kernel: Out of memory: Kill process 6033 (java) score 367 or sacrifice child
+Apr 14 14:13:36 sha2uvp-gert01 kernel: Killed process 6033 (java) total-vm:29930040kB, anon-rss:10625048kB, file-rss:0kB, shmem-rss:24kB

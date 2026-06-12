@@ -1,0 +1,7 @@
+[ 3256.234567] httpd invoked oom-killer: gfp_mask=0x6200ca, order=0, oom_score_adj=0
+[ 3256.234570] CPU: 2 PID: 1842 Comm: httpd Not tainted 5.15.0-91-generic #1
+[ 3256.234580] Node 0 Normal free:8240kB min:15280kB low:18000kB high:21000kB
+[ 3256.234590] Swap:  SwapTotal:       0 kB   SwapFree:        0 kB
+[ 3256.234595] 524288 pages RAM
+[ 3256.234610] oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=/,mems_allowed=0,global_oom,task_memcg=/,task=httpd,pid=1842,uid=48,pgtables=430080,score=800
+[ 3256.234612] Out of memory: Killed process 1842 (httpd) total-vm:4523128kB, anon-rss:3891204kB, file-rss:0kB, shmem-rss:0kB, UID:48
