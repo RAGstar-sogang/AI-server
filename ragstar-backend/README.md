@@ -47,6 +47,10 @@ RAGstar는 이 과제를 **LangGraph 기반 4단계 상태 그래프(N1→N2→N
 > 파싱·분류·계산·검색 같은 **결정적(deterministic) 단계는 코드**로, **맥락 통합과 자연어 진단만 LLM**으로 분리합니다.
 > 이로써 로컬 소형 모델의 부담을 줄이고, 각 단계 출력을 독립적으로 검증할 수 있습니다.
 
+#### 시연 영상
+
+<video controls src="https://github.com/RAGstar-sogang/AI-server/blob/main/ragstar-backend/RAGstar%20%EC%8B%9C%EC%97%B0%20%EC%98%81%EC%83%81.mp4" title="RAGstar 시연 영상"></video>
+
 ---
 
 ## 팀 & 지도교수
