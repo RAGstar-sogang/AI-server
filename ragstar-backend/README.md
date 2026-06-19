@@ -49,7 +49,7 @@ RAGstar는 이 과제를 **LangGraph 기반 4단계 상태 그래프(N1→N2→N
 
 #### 시연 영상
 
-<video controls src="https://github.com/RAGstar-sogang/AI-server/blob/main/ragstar-backend/RAGstar%20%EC%8B%9C%EC%97%B0%20%EC%98%81%EC%83%81.mp4" title="RAGstar 시연 영상"></video>
+https://github.com/user-attachments/assets/2324d5a2-f05f-433a-b521-43d861fa9d5c
 
 ---
 
